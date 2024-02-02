@@ -60,3 +60,18 @@ exports.deleteFile = async (filename) => {
     }
   }
 };
+
+exports.searchFiles = async (query) => {
+  try {
+    const files = await fs.readdir(baseDirectory);
+    const decryptedFiles = files.map((filename) => encryptionUtil.decrypt(filename));
+    // Perform the search based on the query
+    const matchingFiles = decryptedFiles.filter((filename) => filename.includes(query));
+    if (matchingFiles.length === 0) {
+      return { message: "No matching files found!"}
+    }
+    return matchingFiles;
+  } catch (error) {
+    
+  }
+}

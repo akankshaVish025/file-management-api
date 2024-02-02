@@ -1,6 +1,4 @@
 const fileService = require("../services/fileService");
-const encryptionUtil = require("../utils/encryptionUtil");
-
 
 const uploadFile = async (req, res, next) => {
   try {
@@ -38,4 +36,14 @@ const deleteFile = async (req, res, next) => {
   }
 };
 
-module.exports = { uploadFile, listFiles, deleteFile };
+const searchFiles = async (req, res, next) => {
+try {
+  const { query } = req.query;
+  const matchingFiles = await fileService.searchFiles(query);
+  res.json({ files: matchingFiles });
+} catch (error) {
+  next(error);
+}
+}
+
+module.exports = { uploadFile, listFiles, deleteFile, searchFiles };

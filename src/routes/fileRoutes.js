@@ -4,6 +4,7 @@ const {
   uploadFile,
   deleteFile,
   listFiles,
+  searchFiles,
 } = require("../controllers/fileController");
 const uploadMiddleware = require("../middlewares/uploadMiddleware");
 
@@ -15,5 +16,8 @@ router.delete("/delete/:filename", deleteFile);
 
 // Get list of all the uploaded files
 router.get("/list", listFiles);
+
+// get route for file search
+router.get('/search', searchFiles);
 
 module.exports = router;
