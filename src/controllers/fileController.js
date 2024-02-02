@@ -1,10 +1,12 @@
-const fileService = require('../services/fileService');
+const fileService = require("../services/fileService");
 
 const uploadFile = async (req, res, next) => {
   try {
     const file = req.file;
     if (!file) {
-      return res.status(400).json({ status: false, message: "Please provide file to upload!"})
+      return res
+        .status(400)
+        .json({ status: false, message: "Please provide file to upload!" });
     }
     const result = await fileService.uploadFile(file);
     res.json(result);
@@ -16,7 +18,9 @@ const uploadFile = async (req, res, next) => {
 const listFiles = async (req, res, next) => {
   try {
     const files = await fileService.listFiles();
-    return res.status(200).json({ status: true, message: "List of all the file", data: files });
+    return res
+      .status(200)
+      .json({ status: true, message: "List of all the file", data: files });
   } catch (error) {
     next(error);
   }
