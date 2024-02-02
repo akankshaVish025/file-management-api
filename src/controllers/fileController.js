@@ -1,4 +1,6 @@
 const fileService = require("../services/fileService");
+const encryptionUtil = require("../utils/encryptionUtil");
+
 
 const uploadFile = async (req, res, next) => {
   try {
@@ -29,7 +31,6 @@ const listFiles = async (req, res, next) => {
 const deleteFile = async (req, res, next) => {
   try {
     const filename = req.params.filename.trim();
-    console.log(filename, "filename");
     const result = await fileService.deleteFile(filename);
     res.json(result);
   } catch (error) {

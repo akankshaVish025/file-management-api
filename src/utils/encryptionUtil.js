@@ -30,9 +30,11 @@ exports.encrypt = (text) => {
 
 exports.decrypt = (text) => {
   try {
+    console.log(text, "text");
     const iv = Buffer.from(text.slice(0, 32), "hex");
-    const encryptedData = text.slice(32);
-    console.log(encryptedData, "Data");
+    console.log(iv.length, "iv length");
+    // const encryptedData = text.slice(32);
+    // console.log(encryptedData, "Data");
 
     if (Buffer.from(secretKey, "hex").length !== 32) {
       throw new Error("Invalid key length. Key must be 32 bytes.");
