@@ -18,6 +18,7 @@ const uploadFile = async (req, res, next) => {
 const listFiles = async (req, res, next) => {
   try {
     const files = await fileService.listFiles();
+    // console.log(files,"files");
     return res
       .status(200)
       .json({ status: true, message: "List of all the file", data: files });
