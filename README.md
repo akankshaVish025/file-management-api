@@ -51,7 +51,7 @@ Install dependencies: npm install
 
 Start the MongoDB server.
 
-Run the application: node app.js OR npm start
+Run the application: node app.js   OR   npm start
 
 Use an API testing tool (e.g., Postman) to interact with the endpoints.
 
