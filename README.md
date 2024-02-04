@@ -1,4 +1,4 @@
-The project is organized into different directories to maintain a clean and modular code structure.
+**The project is organized into different directories to maintain a clean and modular code structure.**
 
 1. /src
 
