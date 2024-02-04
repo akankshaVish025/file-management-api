@@ -35,19 +35,27 @@ It is the main application file where the server is configured and initialized.
 **Steps to Run the Application**
 
 Install dependencies: npm install
+
 Start the MongoDB server.
+
 Run the application: node app.js
+
 Use an API testing tool (e.g., Postman) to interact with the endpoints.
 
 **API Endpoints**
 
 User Authentication
+
 POST /api/auth/login: User login endpoint.
+
 POST /api/auth/register: User registration endpoint.
 
 File Management
+
 POST /api/upload: Upload a file (requires authentication).
+
 DELETE /api/delete/:filename: Delete a file by filename (requires authentication).
+
 GET /api/list: Get a list of uploaded files (requires authentication).
 
 **Contributions**
