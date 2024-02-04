@@ -39,7 +39,6 @@ exports.listFiles = async () => {
 exports.deleteFile = async (filename) => {
   try {
     // const decryptedFilename = encryptionUtil.decrypt(filename);
-    // console.log(decryptedFilename, "dec");
 
     const filePath = path.join(baseDirectory, filename);
 
